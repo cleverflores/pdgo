@@ -1,0 +1,3900 @@
+Access:
+  tableName: access
+  columns:
+    aid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    mask:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    type:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Accesslog:
+  tableName: accesslog
+  columns:
+    aid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    sid:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    path:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    url:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    timer:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AdClicks:
+  tableName: ad_clicks
+  columns:
+    cid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    hostid:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    url:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: false
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AdGroups:
+  tableName: ad_groups
+  columns:
+    gid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+AdHosts:
+  tableName: ad_hosts
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    hostid:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: false
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+AdImage:
+  tableName: ad_image
+  columns:
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    fid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    url:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    tooltip:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    width:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    height:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AdImageFormat:
+  tableName: ad_image_format
+  columns:
+    gid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    min_width:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    max_width:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    min_height:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    max_height:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AdNotify:
+  tableName: ad_notify
+  columns:
+    notid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    oid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    event:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    delay:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    queued:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    time:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    sent:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    counter:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    locked:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    expire:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    address:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    subject:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    body:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+AdOwners:
+  tableName: ad_owners
+  columns:
+    oid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AdPermissions:
+  tableName: ad_permissions
+  columns:
+    oid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    permissions:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+AdStatistics:
+  tableName: ad_statistics
+  columns:
+    sid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    date:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    action:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    hostid:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: false
+      autoincrement: false
+    count:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AdText:
+  tableName: ad_text
+  columns:
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    url:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    adheader:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    adbody:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+Ads:
+  tableName: ads
+  columns:
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    gid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    adstatus:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    adtype:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    redirect:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    autoactivate:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    autoactivated:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    autoexpire:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    autoexpired:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    activated:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    maxviews:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    maxclicks:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    expired:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AggregatorCategory:
+  tableName: aggregator_category
+  columns:
+    cid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    block:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AggregatorCategoryFeed:
+  tableName: aggregator_category_feed
+  columns:
+    fid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    cid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+AggregatorCategoryItem:
+  tableName: aggregator_category_item
+  columns:
+    iid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    cid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+AggregatorFeed:
+  tableName: aggregator_feed
+  columns:
+    fid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    url:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    refresh:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    checked:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    link:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    image:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    etag:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    modified:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    block:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+AggregatorItem:
+  tableName: aggregator_item
+  columns:
+    iid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    fid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    link:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    author:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    guid:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Authmap:
+  tableName: authmap
+  columns:
+    aid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    authname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    module:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+Blocks:
+  tableName: blocks
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    module:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    delta:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    theme:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    region:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: left
+      notnull: true
+      autoincrement: false
+    custom:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    throttle:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    visibility:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    pages:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    title:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+BlocksRoles:
+  tableName: blocks_roles
+  columns:
+    module:
+      type: string(64)
+      fixed: false
+      primary: true
+      autoincrement: false
+    delta:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    rid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+Bloginfo:
+  tableName: bloginfo
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    title:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Blogstamp:
+  tableName: blogstamp
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    created:
+      type: integer(8)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    stamp:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+Book:
+  tableName: book
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    parent:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Boxes:
+  tableName: boxes
+  columns:
+    bid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    body:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    info:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Cache:
+  tableName: cache
+  columns:
+    cid:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    data:
+      type: blob()
+      primary: false
+      notnull: false
+      autoincrement: false
+    expire:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    headers:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+CacheContent:
+  tableName: cache_content
+  columns:
+    cid:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    data:
+      type: blob()
+      primary: false
+      notnull: false
+      autoincrement: false
+    expire:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    headers:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+CacheFilter:
+  tableName: cache_filter
+  columns:
+    cid:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    data:
+      type: blob()
+      primary: false
+      notnull: false
+      autoincrement: false
+    expire:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    headers:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+CacheMenu:
+  tableName: cache_menu
+  columns:
+    cid:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    data:
+      type: blob()
+      primary: false
+      notnull: false
+      autoincrement: false
+    expire:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    headers:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+CachePage:
+  tableName: cache_page
+  columns:
+    cid:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    data:
+      type: blob()
+      primary: false
+      notnull: false
+      autoincrement: false
+    expire:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    headers:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+CacheViews:
+  tableName: cache_views
+  columns:
+    cid:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    data:
+      type: blob()
+      primary: false
+      notnull: false
+      autoincrement: false
+    expire:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    headers:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Comments:
+  tableName: comments
+  columns:
+    cid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    pid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    subject:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    comment:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    score:
+      type: integer(3)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    thread:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    users:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    name:
+      type: string(60)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    mail:
+      type: string(64)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    homepage:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+CommunityTags:
+  tableName: community_tags
+  columns:
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    date:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Contact:
+  tableName: contact
+  columns:
+    cid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    category:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    recipients:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    reply:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    selected:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+ContentTypeBlog:
+  tableName: content_type_blog
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+ContentTypeBook:
+  tableName: content_type_book
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+ContentTypeForum:
+  tableName: content_type_forum
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+ContentTypeNoticias:
+  tableName: content_type_noticias
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+ContentTypePagina:
+  tableName: content_type_pagina
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+ContentTypeSlideshow:
+  tableName: content_type_slideshow
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+FileRevisions:
+  tableName: file_revisions
+  columns:
+    fid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    list:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Files:
+  tableName: files
+  columns:
+    fid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    filename:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    filepath:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    filemime:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    filesize:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+FilterFormats:
+  tableName: filter_formats
+  columns:
+    format:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    roles:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    cache:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Filters:
+  tableName: filters
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    module:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    delta:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Flood:
+  tableName: flood
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    event:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Forum:
+  tableName: forum
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+History:
+  tableName: history
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    nid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+LocalesMeta:
+  tableName: locales_meta
+  columns:
+    locale:
+      type: string(12)
+      fixed: false
+      primary: true
+      autoincrement: false
+    name:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    enabled:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    isdefault:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    plurals:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    formula:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+LocalesSource:
+  tableName: locales_source
+  columns:
+    lid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    location:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    source:
+      type: blob()
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+LocalesTarget:
+  tableName: locales_target
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    lid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    translation:
+      type: blob()
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    locale:
+      type: string(12)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    plid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    plural:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Menu:
+  tableName: menu
+  columns:
+    mid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    pid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    path:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    type:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Node:
+  tableName: node
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    type:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    title:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '1'
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    changed:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    comment:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    promote:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    moderate:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    sticky:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeAccess:
+  tableName: node_access
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    gid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    realm:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    grant_view:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    grant_update:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    grant_delete:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeCommentStatistics:
+  tableName: node_comment_statistics
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    last_comment_timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    last_comment_name:
+      type: string(60)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    last_comment_uid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    comment_count:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeCounter:
+  tableName: node_counter
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    totalcount:
+      type: integer(8)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    daycount:
+      type: integer(3)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeField:
+  tableName: node_field
+  columns:
+    field_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    type:
+      type: string(127)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    global_settings:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    required:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    multiple:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    db_storage:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeFieldInstance:
+  tableName: node_field_instance
+  columns:
+    field_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    type_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    weight:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    label:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    widget_type:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    widget_settings:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    display_settings:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+NodeGroup:
+  tableName: node_group
+  columns:
+    type_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    group_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    label:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    settings:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeGroupFields:
+  tableName: node_group_fields
+  columns:
+    type_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    group_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    field_name:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+NodeRevisions:
+  tableName: node_revisions
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    title:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    body:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    teaser:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    log:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+NodeType:
+  tableName: node_type
+  columns:
+    type:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    module:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    help:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    has_title:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    title_label:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    has_body:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    body_label:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    min_word_count:
+      type: integer(2)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    custom:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    modified:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    locked:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    orig_type:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+PanelsArea:
+  tableName: panels_area
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    did:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    area:
+      type: string(32)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    type:
+      type: string(32)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    configuration:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    position:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+PanelsInfo:
+  tableName: panels_info
+  columns:
+    did:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    title:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    access:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    path:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    css_id:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    layout:
+      type: string(32)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Permission:
+  tableName: permission
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    rid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    perm:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Poll:
+  tableName: poll
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    runtime:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    active:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+PollChoices:
+  tableName: poll_choices
+  columns:
+    chid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    chtext:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    chvotes:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    chorder:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+PollVotes:
+  tableName: poll_votes
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    chorder:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '-1'
+      notnull: true
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+ProfileFields:
+  tableName: profile_fields
+  columns:
+    fid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    name:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    explanation:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    category:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    page:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    type:
+      type: string(128)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    required:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    register:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    visibility:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    autocomplete:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    options:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+ProfileValues:
+  tableName: profile_values
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    fid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    value:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Role:
+  tableName: role
+  columns:
+    rid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    name:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+SearchDataset:
+  tableName: search_dataset
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    sid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    type:
+      type: string(16)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    data:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+SearchIndex:
+  tableName: search_index
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    word:
+      type: string(50)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    sid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    type:
+      type: string(16)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    fromsid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    fromtype:
+      type: string(16)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    score:
+      type: float()
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+SearchTotal:
+  tableName: search_total
+  columns:
+    word:
+      type: string(50)
+      fixed: false
+      primary: true
+      autoincrement: false
+    count:
+      type: float()
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+Sequences:
+  tableName: sequences
+  columns:
+    name:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    id:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Sessions:
+  tableName: sessions
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    sid:
+      type: string(64)
+      fixed: false
+      primary: true
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    cache:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    session:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+Slideshow:
+  tableName: slideshow
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: false
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    location:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    align:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    dimensions:
+      type: string(20)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+System:
+  tableName: system
+  columns:
+    filename:
+      type: string(255)
+      fixed: false
+      primary: true
+      autoincrement: false
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    type:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    throttle:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    bootstrap:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    schema_version:
+      type: integer(2)
+      unsigned: 0
+      primary: false
+      default: '-1'
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+TermData:
+  tableName: term_data
+  columns:
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+TermHierarchy:
+  tableName: term_hierarchy
+  columns:
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    parent:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+TermNode:
+  tableName: term_node
+  columns:
+    nid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+TermRelation:
+  tableName: term_relation
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    tid1:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    tid2:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+TermSynonym:
+  tableName: term_synonym
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    tid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+TinymceRole:
+  tableName: tinymce_role
+  columns:
+    name:
+      type: string(128)
+      fixed: false
+      primary: true
+      autoincrement: false
+    rid:
+      type: integer(1)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+TinymceSettings:
+  tableName: tinymce_settings
+  columns:
+    name:
+      type: string(128)
+      fixed: false
+      primary: true
+      autoincrement: false
+    settings:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+UrlAlias:
+  tableName: url_alias
+  columns:
+    pid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    src:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    dst:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+UserPostcounts:
+  tableName: user_postcounts
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    posts:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+Users:
+  tableName: users
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    name:
+      type: string(60)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    pass:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    mail:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: false
+      autoincrement: false
+    mode:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    sort:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    threshold:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: false
+      autoincrement: false
+    theme:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    signature:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    created:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    access:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    login:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    status:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    timezone:
+      type: string(8)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    language:
+      type: string(12)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    picture:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    init:
+      type: string(64)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: false
+      autoincrement: false
+    data:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+UsersRoles:
+  tableName: users_roles
+  columns:
+    uid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    rid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+Variable:
+  tableName: variable
+  columns:
+    name:
+      type: string(48)
+      fixed: false
+      primary: true
+      autoincrement: false
+    value:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+ViewArgument:
+  tableName: view_argument
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    type:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    argdefault:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    options:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    position:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    wildcard:
+      type: string(32)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    wildcard_substitution:
+      type: string(32)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+ViewExposedFilter:
+  tableName: view_exposed_filter
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    field:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    label:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    optional:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    is_default:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    operator:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    single:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    position:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+ViewFilter:
+  tableName: view_filter
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    tablename:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    field:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    value:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    operator:
+      type: string(20)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    options:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    position:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+ViewSort:
+  tableName: view_sort
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    position:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    field:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    sortorder:
+      type: string(5)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    options:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    tablename:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+ViewTablefield:
+  tableName: view_tablefield
+  columns:
+    id:
+      type: integer(8)
+      autoincrement: true
+      primary: true
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    tablename:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    field:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    label:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    handler:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    sortable:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    defaultsort:
+      type: string(5)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    options:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    position:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+ViewView:
+  tableName: view_view
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    name:
+      type: string(32)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    access:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    page:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    page_title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    page_header:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    page_header_format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    page_empty:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    page_empty_format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    page_footer:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    page_footer_format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    page_type:
+      type: string(20)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    use_pager:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    nodes_per_page:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    url:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_tab:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_tab_weight:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_tab_default:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_tab_default_parent_type:
+      type: string(10)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_parent_title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    menu_parent_tab_weight:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    block:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_title:
+      type: string(255)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_use_page_header:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_header:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_header_format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    block_use_page_footer:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_footer:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_footer_format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    block_use_page_empty:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_empty:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_empty_format:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    block_type:
+      type: string(20)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    nodes_per_block:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    block_more:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    breadcrumb_no_home:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    changed:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+    view_args_php:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    is_cacheable:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      notnull: false
+      autoincrement: false
+Vocabulary:
+  tableName: vocabulary
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: true
+    name:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    description:
+      type: string()
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    help:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    relations:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    hierarchy:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    multiple:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    required:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    tags:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    module:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    weight:
+      type: integer(1)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+VocabularyNodeTypes:
+  tableName: vocabulary_node_types
+  columns:
+    vid:
+      type: integer(4)
+      unsigned: 1
+      primary: true
+      autoincrement: false
+    type:
+      type: string(32)
+      fixed: false
+      primary: true
+      autoincrement: false
+Watchdog:
+  tableName: watchdog
+  columns:
+    wid:
+      type: integer(4)
+      unsigned: 0
+      primary: true
+      autoincrement: true
+    uid:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    type:
+      type: string(16)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    message:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    severity:
+      type: integer(1)
+      unsigned: 1
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
+    link:
+      type: string(255)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    location:
+      type: string()
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    referer:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    hostname:
+      type: string(128)
+      fixed: false
+      primary: false
+      default: ''
+      notnull: true
+      autoincrement: false
+    timestamp:
+      type: integer(4)
+      unsigned: 0
+      primary: false
+      default: '0'
+      notnull: true
+      autoincrement: false
